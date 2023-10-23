@@ -1,23 +1,23 @@
 import assert from "assert";
 import { Manager, Apis } from "../lib";
 
-var defaultUrl = "wss://testnet.revolutionpopuli.com";
+var defaultUrl = "wss://node.rsquared.digital";
 
 var faultyNodeList = [
-    {url: "wss://testnet.revolutionpopuli.com", location: "Public Testnet Server"},
+    {url: "wss://node.rsquared.digital", location: "Public Testnet Server"},
     {url: "ws://127.0.0.1:8090", location: "Local Testnet Server"},
 ];
 
 var noWorkingNodes = [
-    {url: "wss://testnet.revolutionpopuli.com/wqsdsqs", location: "Public Testnet Server"},
+    {url: "wss://node.rsquared.digital/wqsdsqs", location: "Public Testnet Server"},
     {url: "ws://127.23230.0.1:8091", location: "Local Testnet Server"},
 ];
 
 var fullNodeList = [
     // Testnet
     {
-        url: "wss://testnet.revolutionpopuli.com",
-        location: {translate: "TESTNET - RevPop Infrastructure"}
+        url: "wss://node.rsquared.digital",
+        location: {translate: "TESTNET - R-Squared Infrastructure"}
     },
     {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
 ]
@@ -25,7 +25,7 @@ var fullNodeList = [
 
 /* This node currently throws an API error for the crypto API */
 var failedInitNodes = [
-    {url: "wss://testnet.revolutionpopuli.com/ws ", location: "Local Testnet Server"}
+    {url: "wss://node.rsquared.digital/ws ", location: "Local Testnet Server"}
 ];
 
 describe("Connection Manager", function() {
@@ -42,7 +42,7 @@ describe("Connection Manager", function() {
     });
 
     it("Instantiates with orders api", function() {
-        let man = new Manager({url: "wss://testnet.revolutionpopuli.com", urls: [], optionalApis: {enableOrders: true}});
+        let man = new Manager({url: "wss://node.rsquared.digital", urls: [], optionalApis: {enableOrders: true}});
         return new Promise( function(resolve, reject) {
             man.connect().then(() => {
                 assert(!!Apis.instance().orders_api());
@@ -65,7 +65,7 @@ describe("Connection Manager", function() {
         let man = new Manager({url: "ws://127.0.0.1:8092", urls: faultyNodeList.map(a => a.url)});
         return new Promise( function(resolve, reject) {
             man.connectWithFallback().then(function() {
-                assert.equal(man.url, "wss://testnet.revolutionpopuli.com");
+                assert.equal(man.url, "wss://node.rsquared.digital");
                 resolve();
             })
             .catch(reject)
@@ -101,10 +101,9 @@ describe("Connection Manager", function() {
     it("Can automatically fallback when closed", function() {
         this.timeout(20000);
         let man = new Manager({
-            url: "wss://testnet.revolutionpopuli.com",
+            url: "wss://node.rsquared.digital",
             urls: ([
-                "wss://testnet.revolutionpopuli.com",
-                "wss://testnet2.revolutionpopuli.com",
+                "wss://node.rsquared.digital",
             ]),
             autoFallback: true
         });
@@ -131,10 +130,9 @@ describe("Connection Manager", function() {
         return new Promise( function(resolve, reject) {
 
         let man = new Manager({
-            url: "wss://testnet.revolutionpopuli.com",
+            url: "wss://node.rsquared.digital",
             urls: ([
-                "wss://testnet.revolutionpopuli.com",
-                "wss://testnet2.revolutionpopuli.com",
+                "wss://node.rsquared.digital",
             ]),
             closeCb: function() {
                 resolve();
@@ -159,7 +157,7 @@ describe("Connection Manager", function() {
 
     it("Checks connections for url and urls", function() {
         this.timeout(20000);
-        let man = new Manager({url: "wss://testnet.revolutionpopuli.com", urls: ["wss://testnet.revolutionpopuli.com/ws"]});
+        let man = new Manager({url: "wss://node.rsquared.digital", urls: ["wss://node.rsquared.digital/ws"]});
         return new Promise( function(resolve, reject) {
             man.checkConnections().then((latencies => {
                 assert.equal(Object.keys(latencies).length, 2);

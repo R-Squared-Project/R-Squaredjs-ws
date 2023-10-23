@@ -1,6 +1,6 @@
-# Revolution Populi Core Blockchain websocket interface (revpopjs-ws)
+# R-Squared Core Blockchain websocket interface (rsquared-js-ws)
 
-Pure JavaScript RevPop websocket library for node.js and browsers. Can be used to easily connect to and obtain data from the blockchain via public apis or local nodes.
+Pure JavaScript R-Squared websocket library for node.js and browsers. Can be used to easily connect to and obtain data from the blockchain via public apis or local nodes.
 
 Credit for the original implementation goes to [jcalfeee](https://github.com/jcalfee).
 
@@ -8,7 +8,7 @@ Credit for the original implementation goes to [jcalfeee](https://github.com/jca
 
 This library can be obtained through npm:
 ```
-npm install @revolutionpopuli/revpopjs-ws
+npm install @rsquared/rsquared-js-ws
 ```
 
 ## Usage
@@ -18,15 +18,15 @@ Several examples are available in the /examples folder, and the tests in /test a
 Browser bundles are provided in /build/, for testing purposes you can access this from rawgit:
 
 ```
-<script type="text/javascript" src="https://cdn.rawgit.com/Revolution-Populi/revpopjs-ws/build/revpopjs-ws.js" />
+<script type="text/javascript" src="https://cdn.rawgit.com/R-Squared-Project/R-Squaredjs-ws/build/rsquared-js-ws.js" />
 ```
 
-A variable revpop_ws will be available in window.
+A variable rsquared_ws will be available in window.
 
 For use in a webpack/browserify context, see the example below for how to open a websocket connection to the Openledger API and subscribe to any object updates:
 
 ```
-var {Apis} = require("@revolutionpopuli/revpopjs-ws");
+var {Apis} = require("@rsquared/rsquared-js-ws");
 Apis.instance("wss://localhost/ws", true).init_promise.then((res) => {
     console.log("connected to:", res[0].network);
     Apis.db.set_subscribe_callback( updateListener, true )
