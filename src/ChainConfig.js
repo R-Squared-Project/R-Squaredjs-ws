@@ -9,13 +9,13 @@ var config = {
       core_asset: "RQRX",
       address_prefix: "RQRX",
       chain_id:
-        "fdf2a77bf0076233ab95494d6e32889c3fc2f950ea0111b93c236316f6225741"
+        "a89f8a1cd2a699e5c521b87cc6210198ed0aad9e2a483322c6db2c391b278f64"
     },
     RSquaredDev: {
       core_asset: "RQRX",
       address_prefix: "RQRX",
       chain_id:
-        "fdf2a77bf0076233ab95494d6e32889c3fc2f950ea0111b93c236316f6225741"
+        "a89f8a1cd2a699e5c521b87cc6210198ed0aad9e2a483322c6db2c391b278f64"
     }
   },
 
