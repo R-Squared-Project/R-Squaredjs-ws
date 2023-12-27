@@ -6,7 +6,7 @@
 /* running 'npm run build' is necessary before launching the examples */
 
 var {Apis} = require("../cjs")
-// let wsString = "wss://core.revolutionpopuli.com/ws";
+// let wsString = "wss://node.rsquared.digital/ws";
 let wsStringLocal = "ws://127.0.0.1:8090";
 
 let holders = {};

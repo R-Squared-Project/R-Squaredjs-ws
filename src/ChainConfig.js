@@ -5,17 +5,17 @@ var config = {
   expire_in_secs_proposal: 24 * 60 * 60,
   review_in_secs_committee: 24 * 60 * 60,
   networks: {
-    RevPop: {
-      core_asset: "RVP",
-      address_prefix: "RVP",
+    RSquared: {
+      core_asset: "RQRX",
+      address_prefix: "RQRX",
       chain_id:
-        "3eb7485cde282aabdfaf41d54fa4fedb1fe2537c598c969b0f4dce412f8ad29d"
+        "a89f8a1cd2a699e5c521b87cc6210198ed0aad9e2a483322c6db2c391b278f64"
     },
-    RevPopDev: {
-      core_asset: "RVP",
-      address_prefix: "RVP",
+    RSquaredDev: {
+      core_asset: "RQRX",
+      address_prefix: "RQRX",
       chain_id:
-        "147f0c14427dc6c28ecc977229e5067cf3608cb6d16f79aa39888845ee4ca2bf"
+        "a89f8a1cd2a699e5c521b87cc6210198ed0aad9e2a483322c6db2c391b278f64"
     }
   },
 
