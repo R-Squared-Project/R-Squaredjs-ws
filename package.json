@@ -1,6 +1,6 @@
 {
   "name": "@r-squared/rsquared-js-ws",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "description": "Pure JavaScript R-Squared websocket interface for node.js and browsers.",
   "browser": {
     "ws": false
@@ -55,7 +55,7 @@
     "babel-preset-minify": "^0.5.1",
     "browserify": "^16.5.2",
     "cross-env": "^5.2.1",
-    "http-server": "^0.12.3",
+    "http-server": "^0.13.0",
     "mocha": "^8.1.3"
   }
 }
